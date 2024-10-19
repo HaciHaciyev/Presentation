@@ -1,92 +1,92 @@
-/* Main container */
+.home-b {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    text-align: left;
+}
+
 .home-container {
-    font-family: Arial, sans-serif;
-    color: #333;
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.9), rgba(28, 28, 28, 0.9)), radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Navbar styling */
+/* For list of page links. */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #222;
-    padding: 10px 20px;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-.navbar .logo {
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.navbar nav ul li {
+  margin: 0 10px;
 }
 
-.navbar ul li {
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
+.navbar nav ul li a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.navbar ul li:hover {
-    text-decoration: underline;
+/* For user avatar. */
+.avatar-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
-/* Content section */
-.content-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 80px;
-    align-items: center;
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }
 
-/* Text content styling */
-.text-content {
-    max-width: 50%;
-}
-
-.text-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.text-content p {
-    font-size: 1.1em;
-    line-height: 1.6em;
-    margin-bottom: 20px;
-}
-
-.get-started-btn {
+/** Get Started Button*/
+.get-started-button {
     background-color: black;
     color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
 }
 
-.get-started-btn:hover {
-    background-color: #555;
+.get-started-button:focus,
+.get-started-button:active {
+    outline: none;
+    background-color: black;
+    transform: translateX(-50%) scale(1.05);
 }
 
-/* Image content styling */
-.image-content img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .content-section {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .text-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+.get-started-button:hover {
+    background-color: #333;
 }

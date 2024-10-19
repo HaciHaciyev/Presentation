@@ -1,11 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../style/Home.css';
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="home-container">
+            <b className="home-b">Chessland</b>
+
             <header className="navbar">
-                <div className="logo">Chessland</div>
                 <nav>
                     <ul>
                         <li><Link to="/play">Play</Link></li>
@@ -18,28 +21,13 @@ const Home = () => {
                 </nav>
             </header>
 
-            <section className="content-section">
-                <div className="text-content">
-                    <h1>Welcome to Chessland</h1>
-                    <p>
-                        Chessland is a cutting-edge online platform tailored for chess enthusiasts and the vibrant chess community.
-                        Whether you're a seasoned player or just starting your journey, Chessland offers a comprehensive suite of
-                        features to enhance your chess experience.
-                    </p>
-                    <p>
-                        Engage in thrilling online matches with players from around the globe, analyze your games with powerful tools,
-                        and refine your strategies. Enjoy live broadcasts of exciting tournaments and matches, and immerse yourself in a
-                        community where you can share insights, exchange experiences, and discuss the intricacies of the game.
-                    </p>
-                    <p>
-                        At Chessland, we believe in fostering a love for chess, making it accessible and enjoyable for everyone.
-                        Join us today and elevate your chess journey to new heights!
-                    </p>
-                    <button className="get-started-btn">
-                        <Link to="/entrance">Get Started</Link>
-                    </button>
-                </div>
-            </section>
+            <div className="avatar-container">
+                <img src="default-user-icon.png" alt="User Avatar" className="avatar" />
+            </div>
+
+            <button className="get-started-button" onClick={() => navigate("/entrance")}>
+                Get Started
+            </button>
         </div>
     );
 };
