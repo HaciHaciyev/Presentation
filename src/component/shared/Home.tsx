@@ -36,11 +36,8 @@ const Home = () => {
                         Join us today and elevate your chess journey to new heights!
                     </p>
                     <button className="get-started-btn">
-                        <Link to="/login">Get Started</Link>
+                        <Link to="/entrance">Get Started</Link>
                     </button>
-                </div>
-                <div className="image-content">
-                    <img src="/public/images/home.png" alt="Chess pieces"/>
                 </div>
             </section>
         </div>
