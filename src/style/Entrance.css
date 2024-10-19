@@ -5,12 +5,7 @@
 }
 
 .entrance-page {
-    background:
-    linear-gradient(135deg, rgba(184, 115, 51, 0.95), rgba(28, 28, 28, 0.95)),
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent),
-    url('multi-texture.png');
-    animation: waterfall 24s linear infinite;
-
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.9), rgba(28, 28, 28, 0.9)), radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -24,12 +19,6 @@
     align-items: center;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
-}
-
-@keyframes waterfall {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }
 }
 
 .entrance-h1 {
