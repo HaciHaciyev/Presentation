@@ -5,7 +5,7 @@
 }
 
 .entrance-page {
-    background-image: url('../../public/images/entrance-background.png');
+    background-image: url('/images/entrance-background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

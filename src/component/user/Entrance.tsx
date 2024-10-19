@@ -10,13 +10,12 @@ interface FormData {
 }
 
 const Entrance: React.FC = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState<FormData>({
         username: '',
         password: '',
     });
-    const navigate = useNavigate();
     const [isSigningUp, setIsSigningUp] = useState(false);
-    const [jwtToken, setJwtToken] = useState<string | null>(null);
     const [containerClass, setContainerClass] = useState('container');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -42,16 +41,14 @@ const Entrance: React.FC = () => {
             );
 
             if (response.ok) {
-                const data = await response.json();
-                localStorage.setItem('jwtToken', data.token);
-                setJwtToken(data.token);
                 navigate("/");
             } else {
-                const errorData = await response.json();
-                setErrorMessage(errorData.message || 'An error occurred. Please try again.');
+                const errorData = await response.text();
+                setErrorMessage(errorData || 'An error occurred. Please try again.');
             }
         } catch (error) {
             console.error('Error:', error);
+            setErrorMessage('An error occurred. Please try again.');
         }
     };
 
