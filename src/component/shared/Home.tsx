@@ -16,7 +16,7 @@ const Home = () => {
                         <li><Link to="/pages">Pages</Link></li>
                         <li><Link to="/forum">Forum</Link></li>
                         <li><Link to="/history">History</Link></li>
-                        <li><Link to="/mail">Mail</Link></li>
+                        <li><Link to="/messages">Messages</Link></li>
                     </ul>
                 </nav>
             </header>
