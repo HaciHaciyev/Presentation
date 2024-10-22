@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../style/Home.css';
 
 const Home = () => {
     const navigate = useNavigate();
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownVisible(!dropdownVisible);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        navigate("/");
+    };
 
     return (
         <div className="home-container">
@@ -19,11 +30,19 @@ const Home = () => {
                         <li><Link to="/messages">Messages</Link></li>
                     </ul>
                 </nav>
-            </header>
 
-            <div className="avatar-container">
-                <img src="default-user-icon.png" alt="User Avatar" className="avatar" />
-            </div>
+                <div className="avatar-container" onClick={toggleDropdown}>
+                    <img src="default-user-icon.png" alt="User Avatar" className="avatar" />
+                    {dropdownVisible && (
+                        <div className="dropdown">
+                            <ul>
+                                <li><Link to="/settings">Settings</Link></li>
+                                <li onClick={handleLogout}>Logout</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
+            </header>
 
             <button className="get-started-button" onClick={() => navigate("/entrance")}>
                 Get Started
