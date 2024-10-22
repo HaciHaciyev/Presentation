@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import React, {useState} from "react";
 import '../../style/Entrance.css';
+import axios from 'axios';
 
 interface FormData {
     username: string;
@@ -41,6 +42,11 @@ const Entrance: React.FC = () => {
             );
 
             if (response.ok) {
+                const data = await response.json();
+                const token = data.token;
+                localStorage.setItem('jwtToken', token);
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
                 navigate("/");
             } else {
                 const errorData = await response.text();
